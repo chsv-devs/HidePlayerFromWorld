@@ -1,0 +1,5 @@
+name: HidePlayerFromWorld
+main: fr.lockface.hideplayerfromworld.HidePlayerFromWorld
+depend: []
+version: 1.0
+api-version: 1.12.2
