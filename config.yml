@@ -1,0 +1,5 @@
+# This is the config file for the plugin HidePlayersFromWorld
+# Add you're worlds to the "hidden_worlds"
+# You can also hidde/unhide worlds with the command /hpw
+hidden_worlds:
+   - "world_the_end"
