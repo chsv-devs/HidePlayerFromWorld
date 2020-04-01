@@ -36,7 +36,8 @@ public class WorldChangeEvent implements Listener
 	public void setBypass(Player player)
 	{
 		ByPassPlayers.add(player.getName());
-		applyHidding(player);
+		for (Player p2 : Bukkit.getServer().getOnlinePlayers())
+			player.showPlayer(plugin.getPlugin(plugin.getClass()), p2);
 	}
 	
 	public void removeBypass(Player player)
@@ -56,7 +57,8 @@ public class WorldChangeEvent implements Listener
 	public void setVisible(Player player)
 	{
 		VisiblePlayers.add(player.getName());
-		applyHidding(player);
+		for (Player p2 : Bukkit.getServer().getOnlinePlayers())
+			p2.showPlayer(plugin.getPlugin(plugin.getClass()), player);
 	}
 	
 	public void setUnvible(Player player)
@@ -71,6 +73,12 @@ public class WorldChangeEvent implements Listener
 	public boolean isVisible(Player player)
 	{
 		return VisiblePlayers.contains(player.getName());
+	}
+	
+	public void reloadAll()
+	{
+		for (Player p : Bukkit.getServer().getOnlinePlayers())
+			applyHidding(p);
 	}
 	
 	private void applyHidding(Player p)

@@ -53,6 +53,7 @@ public class AdminCommands implements CommandExecutor {
 						p.sendMessage("§e[HPW] §6World §c" + world + " §6is already a hidden world.");
 					else
 						p.sendMessage("§e[HPW] §6Succesfully added §c" + world + " §6to the hidden worlds.");
+					listener.reloadAll();
 					return true;
 				}
 				else if (args[0].equalsIgnoreCase("removeworld"))
@@ -71,6 +72,7 @@ public class AdminCommands implements CommandExecutor {
 						p.sendMessage("§e[HPW] §6World §c" + world + " §6 is not a hidden world.");
 					else
 						p.sendMessage("§e[HPW] §6Successfully removed §c" + world + "§6 from hidden worlds");
+					listener.reloadAll();
 					return true;
 				}
 				else if (args[0].equalsIgnoreCase("list"))
@@ -90,12 +92,12 @@ public class AdminCommands implements CommandExecutor {
 				{
 					if (args.length > 1)
 					{
-						if (args[1] == "on")
+						if (args[1].equals("on"))
 						{
 							listener.setVisible(p);
 							p.sendMessage("§e[HPW] §6You are now visible in hidden worlds");
 						}
-						else if (args[1] == "off")
+						else if (args[1].equals("off"))
 						{
 							listener.setUnvible(p);
 							p.sendMessage("§e[HPW] §6You are now invible in hidden worlds");
@@ -126,12 +128,12 @@ public class AdminCommands implements CommandExecutor {
 				{
 					if (args.length > 1)
 					{
-						if (args[1] == "on")
+						if (args[1].equals("on"))
 						{
 							listener.setBypass(p);
 							p.sendMessage("§e[HPW] §6You are now able to see everybody in hidden worlds");
 						}
-						else if (args[1] == "off")
+						else if (args[1].equals("off"))
 						{
 							listener.removeBypass(p);
 							p.sendMessage("§e[HPW] §6You are no longer able to see players in hidden worlds");
@@ -180,6 +182,7 @@ public class AdminCommands implements CommandExecutor {
 					sender.sendMessage("§7- §c/hpw addworld");
 					sender.sendMessage("§7- §c/hpw removeworld");
 					sender.sendMessage("§7- §c/hpw list");
+					return true;
 				}
 				if (args[0].equalsIgnoreCase("addworld"))
 				{
@@ -202,6 +205,7 @@ public class AdminCommands implements CommandExecutor {
 						sender.sendMessage("§e[HPW] §6World §c" + world + " §6is already a hidden world.");
 					else
 						sender.sendMessage("§e[HPW] §6Succesfully added §c" + world + " §6to the hidden worlds.");
+					listener.reloadAll();
 					return true;
 				}
 				else if (args[0].equalsIgnoreCase("removeworld"))
@@ -225,6 +229,7 @@ public class AdminCommands implements CommandExecutor {
 						sender.sendMessage("§e[HPW] §6World §c" + world + " §6 is not a hidden world.");
 					else
 						sender.sendMessage("§e[HPW] §6Successfully removed §c" + world + "§6 from hidden worlds");
+					listener.reloadAll();
 					return true;
 				}
 				else if (args[0].equalsIgnoreCase("list"))
