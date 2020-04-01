@@ -273,7 +273,7 @@ public class AdminCommands implements CommandExecutor {
 			{
 				sender.sendMessage(
 						"§6/hpw addworld [world=current]§e : Add the world given or current world to the hidden worlds");
-				sender.sendMessage("§6/hpw removeworld [world=current]§e : Remove the given world or current world from the invisible worlds");
+				sender.sendMessage("§6/hpw removeworld [world=current]§e : Remove the given world or current world from the hidden worlds");
 				sender.sendMessage("§6/hpw list §e: List all hidden worlds");
 			}
 			if (sender.hasPermission("hpw.seeplayers"))
