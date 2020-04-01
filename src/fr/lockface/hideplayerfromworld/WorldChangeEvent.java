@@ -13,8 +13,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class WorldChangeEvent implements Listener
 {
 	HidePlayerFromWorld plugin;
-	private ArrayList<String> ByPassPlayers;
-	private ArrayList<String> VisiblePlayers;
+	private ArrayList<String> ByPassPlayers = new ArrayList<String>();
+	private ArrayList<String> VisiblePlayers = new ArrayList<String>();
 	
 	public WorldChangeEvent(HidePlayerFromWorld main)
 	{

@@ -49,6 +49,7 @@ public class ConfigGestion
 		if (curr.contains(world))
 		{
 			curr.remove(world);
+			config.set("hidden_worlds", curr);
 			save();
 			return true;
 		}

@@ -267,7 +267,7 @@ public class AdminCommands implements CommandExecutor {
 			if (sender.hasPermission("hpw.admin"))
 			{
 				sender.sendMessage(
-						"§6/hpw addworld [world=current]§e : Add the world given or current world to the invisible worlds");
+						"§6/hpw addworld [world=current]§e : Add the world given or current world to the hidden worlds");
 				sender.sendMessage("§6/hpw removeworld [world=current]§e : Remove the given world or current world from the invisible worlds");
 				sender.sendMessage("§6/hpw list §e: List all hidden worlds");
 			}
@@ -280,6 +280,6 @@ public class AdminCommands implements CommandExecutor {
 
 	private boolean hasAnyPerm(CommandSender p)
 	{
-		return p.hasPermission("hpw.seeplayers") || p.hasPermission("hpw.admin") || p.hasPermission("hpw.bevisible");
+		return p.hasPermission("hpw.command") || p.hasPermission("hpw.seeplayers") || p.hasPermission("hpw.admin") || p.hasPermission("hpw.bevisible");
 	}
 }
