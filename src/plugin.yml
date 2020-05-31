@@ -1,8 +1,8 @@
 name: HidePlayerFromWorld
 main: fr.lockface.hideplayerfromworld.HidePlayerFromWorld
 depend: []
-version: 1.0
-api-version: 1.12.2
+version: 1.0.0
+api-version: 1.8
 commands:
    hideplayerfromworld:
       description: Access to config file and admin commands
