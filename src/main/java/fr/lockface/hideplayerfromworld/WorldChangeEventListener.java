@@ -83,7 +83,6 @@ public class WorldChangeEventListener implements Listener
 	
 	private void applyHidding(Player p)
 	{
-		
 		if (plugin.config.isHiddenWorld(p.getWorld().getName()))
 			hideAllPlayersFromPlayer(p);
 		else
@@ -93,6 +92,7 @@ public class WorldChangeEventListener implements Listener
 	
 	private void hideAllPlayersFromPlayer(Player p)
 	{
+		p.sendMessage("    §l§7* 플레이어를 표시하지 않습니다.");
 		for (Player p2 : Bukkit.getServer().getOnlinePlayers())
 		{
 			if (!p.getName().equals(p2.getName()))
@@ -115,6 +115,7 @@ public class WorldChangeEventListener implements Listener
 	
 	private void showAllPlayersFromPlayer(Player p)
 	{
+		p.sendMessage("    §l§7*이제 플레이어가 보입니다.");
 		for (Player p2 : Bukkit.getServer().getOnlinePlayers())
 		{
 			p2.showPlayer(plugin, p);
