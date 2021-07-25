@@ -13,8 +13,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class WorldChangeEventListener implements Listener
 {
 	HidePlayerFromWorld plugin;
-	private ArrayList<String> ByPassPlayers = new ArrayList<String>();
-	private ArrayList<String> VisiblePlayers = new ArrayList<String>();
+	private ArrayList<String> byPassPlayers = new ArrayList<>();
+	private ArrayList<String> visiblePlayers = new ArrayList<>();
 	
 	public WorldChangeEventListener(HidePlayerFromWorld main)
 	{
@@ -35,44 +35,44 @@ public class WorldChangeEventListener implements Listener
 	
 	public void setBypass(Player player)
 	{
-		ByPassPlayers.add(player.getName());
+		byPassPlayers.add(player.getName());
 		for (Player p2 : Bukkit.getServer().getOnlinePlayers())
-			player.showPlayer(p2);
+			player.showPlayer(plugin, p2);
 	}
 	
 	public void removeBypass(Player player)
 	{
-		if (ByPassPlayers.contains(player.getName()))
+		if (byPassPlayers.contains(player.getName()))
 		{
-			ByPassPlayers.remove(player.getName());
+			byPassPlayers.remove(player.getName());
 			applyHidding(player);
 		}
 	}
 	
 	public boolean isBypass(Player player)
 	{
-		return ByPassPlayers.contains(player.getName());
+		return byPassPlayers.contains(player.getName());
 	}
 	
 	public void setVisible(Player player)
 	{
-		VisiblePlayers.add(player.getName());
+		visiblePlayers.add(player.getName());
 		for (Player p2 : Bukkit.getServer().getOnlinePlayers())
-			p2.showPlayer(player);
+			p2.showPlayer(plugin, player);
 	}
 	
-	public void setUnvible(Player player)
+	public void setInvisible(Player player)
 	{
-		if (VisiblePlayers.contains(player.getName()))
+		if (visiblePlayers.contains(player.getName()))
 		{
-			VisiblePlayers.remove(player.getName());
+			visiblePlayers.remove(player.getName());
 			applyHidding(player);
 		}
 	}
 	
 	public boolean isVisible(Player player)
 	{
-		return VisiblePlayers.contains(player.getName());
+		return visiblePlayers.contains(player.getName());
 	}
 	
 	public void reloadAll()
@@ -98,16 +98,16 @@ public class WorldChangeEventListener implements Listener
 			if (!p.getName().equals(p2.getName()))
 			{
 				// if the second player ByPass and is able to see everybody
-				if (!ByPassPlayers.contains(p2.getName()))
+				if (!byPassPlayers.contains(p2.getName()))
 					// if the current player is seen by everybody
-					if (!VisiblePlayers.contains(p.getName()))
-						p2.hidePlayer(p);
+					if (!visiblePlayers.contains(p.getName()))
+						p2.hidePlayer(plugin, p);
 				
 				// if the target player is seen by everybody
-				if (!VisiblePlayers.contains(p2.getName()))
+				if (!visiblePlayers.contains(p2.getName()))
 					// if the current player ByPass and is able to see everybody
-					if (!ByPassPlayers.contains(p.getName()))
-						p.hidePlayer(p2);
+					if (!byPassPlayers.contains(p.getName()))
+						p.hidePlayer(plugin, p2);
 			}
 		}
 		

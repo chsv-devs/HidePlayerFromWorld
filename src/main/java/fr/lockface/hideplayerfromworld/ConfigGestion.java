@@ -29,11 +29,13 @@ public class ConfigGestion
 	
 	public boolean setHidden(String world)
 	{
-		List<String> curr = config.getStringList("hidden_worlds");
-		if (curr.contains(world))
+		List<String> hiddenWorlds = config.getStringList("hidden_worlds");
+		if (hiddenWorlds.contains(world))
+		{
 			return false;
-		curr.add(world);
-		config.set("hidden_worlds", curr);
+		}
+		hiddenWorlds.add(world);
+		config.set("hidden_worlds", hiddenWorlds);
 		save();
 		return true;
 	}

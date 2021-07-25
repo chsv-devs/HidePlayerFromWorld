@@ -37,7 +37,7 @@ public class AdminCommands implements CommandExecutor {
 					return true;
 				}
 
-				if (args[0].equalsIgnoreCase("addworld"))
+				if (args[0].equalsIgnoreCase("addWorld"))
 				{
 					if (!p.hasPermission("hpw.admin"))
 					{
@@ -56,7 +56,7 @@ public class AdminCommands implements CommandExecutor {
 					listener.reloadAll();
 					return true;
 				}
-				else if (args[0].equalsIgnoreCase("removeworld"))
+				else if (args[0].equalsIgnoreCase("removeWorld"))
 				{
 					if (!p.hasPermission("hpw.admin"))
 					{
@@ -88,7 +88,7 @@ public class AdminCommands implements CommandExecutor {
 						p.sendMessage("§7- §a" + w);
 					return true;
 				}
-				else if (args[0].equalsIgnoreCase("makevisible"))
+				else if (args[0].equalsIgnoreCase("makeVisible"))
 				{
 					if (args.length > 1)
 					{
@@ -99,7 +99,7 @@ public class AdminCommands implements CommandExecutor {
 						}
 						else if (args[1].equals("off"))
 						{
-							listener.setUnvible(p);
+							listener.setInvisible(p);
 							p.sendMessage("§e[HPW] §6You are now invible in hidden worlds");
 						}
 						else
@@ -113,7 +113,7 @@ public class AdminCommands implements CommandExecutor {
 					{
 						if (listener.isVisible(p))
 						{
-							listener.setUnvible(p);
+							listener.setInvisible(p);
 							p.sendMessage("§e[HPW] §6You are now invisible in hidden worlds");
 						}
 						else
@@ -124,7 +124,7 @@ public class AdminCommands implements CommandExecutor {
 						return true;
 					}
 				}
-				else if (args[0].equalsIgnoreCase("showplayers"))
+				else if (args[0].equalsIgnoreCase("showPlayers"))
 				{
 					if (args.length > 1)
 					{
