@@ -117,8 +117,8 @@ public class WorldChangeEventListener implements Listener
 	{
 		for (Player p2 : Bukkit.getServer().getOnlinePlayers())
 		{
-			p2.showPlayer(p);
-			p.showPlayer(p2);
+			p2.showPlayer(plugin, p);
+			p.showPlayer(plugin, p2);
 		}
 	}
 
