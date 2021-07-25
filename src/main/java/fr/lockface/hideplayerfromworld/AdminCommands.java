@@ -10,9 +10,9 @@ import org.bukkit.entity.Player;
 public class AdminCommands implements CommandExecutor {
 
 	private HidePlayerFromWorld plugin;
-	private WorldChangeEvent listener;
+	private WorldChangeEventListener listener;
 	
-	public AdminCommands(HidePlayerFromWorld pl, WorldChangeEvent e)
+	public AdminCommands(HidePlayerFromWorld pl, WorldChangeEventListener e)
 	{
 		plugin = pl;
 		listener = e;

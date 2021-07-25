@@ -13,7 +13,7 @@ public class HidePlayerFromWorld extends JavaPlugin
 	public void onEnable()
 	{
 		// Register event when the player change world
-		WorldChangeEvent event = new WorldChangeEvent(this);
+		WorldChangeEventListener event = new WorldChangeEventListener(this);
 		getServer().getPluginManager().registerEvents(event, this);
 		
 		// register command, give it the event, because some manipulation require the event

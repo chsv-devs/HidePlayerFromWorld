@@ -10,13 +10,13 @@ import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 @SuppressWarnings("static-access")
-public class WorldChangeEvent implements Listener
+public class WorldChangeEventListener implements Listener
 {
 	HidePlayerFromWorld plugin;
 	private ArrayList<String> ByPassPlayers = new ArrayList<String>();
 	private ArrayList<String> VisiblePlayers = new ArrayList<String>();
 	
-	public WorldChangeEvent(HidePlayerFromWorld main)
+	public WorldChangeEventListener(HidePlayerFromWorld main)
 	{
 		plugin = main;
 	}
